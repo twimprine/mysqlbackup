@@ -7,4 +7,4 @@ HOSTNAME=$(hostname)
 
 /usr/bin/mysqldump -uroot -pSecretP@ss! --all-databases > /${BACKUPDIR}/${HOSTNAME}_${DATE}.sql
 
-find ${BACKUPDIR} -type f -mtime +${RETENTIONDAYS} -exec rm -f {} \;
+find ${BACKUPDIR}/${HOSTNAME}_* -type f -mtime +${RETENTIONDAYS} -exec rm -f {} \;
